@@ -1,0 +1,6 @@
+%form{ :id => 'newTask', 'ng-submit' => 'addTask()' }
+  %span{ :class => 'input-group' }
+    %input{ :id => 'taskDescription', :type => :text, :placeholder => 'Enter task description', 'ng-model' => 'taskDescription', :autofocus => :autofocus, :maxlength => 255, :required => true, :class => 'form-control input-lg'}
+    %span{ :class => 'input-group-btn' }
+      %button{ class: 'btn btn-danger btn-lg', :type => 'submit' }
+        %span{ class: 'glyphicon glyphicon-plus' }

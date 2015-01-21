@@ -1,0 +1,16 @@
+.ng-cloak{ 'ng-init' => "init()" }
+  %h4 Your task lists
+
+  %ul{ 'ng-show' => 'lists == 0' }
+    %li
+      You don't have any list yet.
+  %ul{ :class => 'list' }
+    %li{ 'ng-repeat' => 'list in lists'}
+      .listItemText.pull-left
+        %a{ :href => '/l/{{list.id}}'}
+          {{list.name}} ({{list.todo_tasks_count}})
+      .listItemActions.pull-right
+        %a{ :class => 'glyphicon glyphicon-trash', 'ng-click' => 'deleteList(list, $index)' }
+      .clearfix
+
+  = render 'templates/new_list_form'

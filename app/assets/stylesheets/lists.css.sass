@@ -1,0 +1,75 @@
+.list
+  list-style: none
+  padding: 0
+
+.list > li
+  margin: 1em 0 1.5em 0
+  padding: 0.5em
+  font-size: 1.1em
+
+.editable
+  cursor: text
+
+.moveable
+  cursor: move
+
+.listItem
+  border-bottom: 1px solid #888
+  opacity: 0.6
+
+  &:hover
+    border-bottom: 1px solid #c00
+    opacity: 1
+
+.listHeader
+  border-bottom: 1px dashed #777
+  text-align: center
+  font-size: 1.3em
+  color: #888
+  cursor: default
+
+.listItemText
+  width: 85%
+
+  a
+    text-decoration: none
+
+  .listItemDesc
+    display: block
+
+  .listItemDescInput, .listItemDesc
+    width: 100%
+
+.listItemActions
+  cursor: default
+
+  a
+    text-decoration: none
+    cursor: pointer
+
+  .icon
+    color: #ccc
+
+    &:hover
+      color: #aaa
+
+  .done, .dropdown
+    display: inline-block
+
+  .done
+    margin-left: 10px
+    font-size: 1.3em
+
+    a
+      &:hover
+        color: #c00
+
+// form
+form#newTask
+  .form-control:focus
+    z-index: 2
+
+#taskDescription
+  width: 100%
+  border: 2px solid #ccc
+

@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title Todo
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"
+    = javascript_include_tag "/sortable.js"
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-resource.js"
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.js"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body{ 'ng-app' => 'ToDo' }
+    .container
+      = render 'layouts/nav'
+      .row
+        .col-md-10.col-md-offset-1
+          = yield
+      .footer

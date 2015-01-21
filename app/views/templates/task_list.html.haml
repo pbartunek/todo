@@ -1,0 +1,12 @@
+.ng-cloak{ 'ng-init' => "init()" }
+  .page-header
+    %h3
+      %editablespan{ :model => 'list.name', 'on-ready' => 'listEdited(list)', 'input-class' => 'listItemDescInput', 'span-class' => 'listItemDesc' }
+
+  = render 'templates/new_task_form'
+
+  .tasks
+    %h4{ :class => 'listHeader' } today
+    %ul{ :id => 'tasks', 'ui:sortable' => 'sortableOptions', 'ng:model' => 'list.tasks', :class => 'list', 'data-non-blank' => true }
+      %li{ 'ng-repeat' => 'task in list.tasks', :class => 'moveable' }
+        = render 'templates/task_list_item'

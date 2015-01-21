@@ -1,0 +1,7 @@
+%h4 New task list:
+%form{ :id => 'newTaskList', 'ng-submit' => 'createList(listName)' }
+  %span{ :class => 'input-group' }
+    %input{ :id => 'listName', :type => :text, :placeholder => 'Enter task list name', 'ng-model' => 'listName', :autofocus => :autofocus, :maxlength => 255, :required => true, :class => 'form-control input-lg'}
+    %span{ :class => 'input-group-btn' }
+      %button{ class: 'btn btn-danger btn-lg', :type => 'submit' }
+        %span{ class: 'glyphicon glyphicon-plus' }

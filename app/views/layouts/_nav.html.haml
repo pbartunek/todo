@@ -1,0 +1,10 @@
+%nav{ class: "navbar navbar-inner", role: :navigation}
+  = link_to 'todo', root_path, class: 'navbar-brand'
+  %ul{ class: 'nav nav-pills navbar-nav pull-right' }
+    - if user_signed_in?
+      %li= link_to ' dashboard', '/dashboard', class: 'glyphicon glyphicon-dashboard'
+      %li= link_to ' logout', destroy_user_session_path, :method => :delete, class: 'glyphicon glyphicon-off'
+    - else
+      %li= link_to ' sign in', new_user_session_path
+      %li= link_to ' sign up', new_user_registration_path
+

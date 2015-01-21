@@ -1,0 +1,13 @@
+%ul{ :class => 'dropdown-menu', :role => 'menu', 'aria-labeledby' => 'actionsMenu'}
+  %li{ :role => 'presentation', :class => 'dropdown-header'} Mark task as:
+  %li{ :role => 'presentation'}
+    %a{ :role => 'menuitem', 'ng-click' => 'compleateTask(task)' } done
+  %li{ :role => 'presentation', :class => 'divider'}
+  %li{ :role => 'presentation', :class => 'dropdown-header'} Move task to the:
+  %li{ :role => 'presentation'}
+    %a{ :role => 'menuitem', 'ng-click' => 'moveToTheTop(task)' } top
+  %li{ :role => 'presentation'}
+    %a{ :role => 'menuitem', 'ng-click' => 'moveToTheBottom(task)' } bottom
+  %li{ :role => 'presentation', :class => 'divider'}
+  %li{ :role => 'presentation'}
+    %a{ :role => 'menuitem', 'ng-click' => 'deleteTask(task)' } Delete

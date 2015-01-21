@@ -1,0 +1,17 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: todo_development
+  pool: 5
+  username: todo
+  password: todopass
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: todo_test
+  pool: 5
+  username: todo
+  password: todopass
+

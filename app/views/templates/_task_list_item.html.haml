@@ -1,0 +1,12 @@
+%div{ 'ng-if' => 'task.description != "later"', :class => 'listItem' }
+  .listItemText.editable.pull-left
+    %editablespan{ :model => 'task.description', 'on-ready' => 'taskEdited(task)', 'input-class' => 'listItemDescInput', 'span-class' => 'listItemDesc' }
+  .listItemActions.pull-right
+    .dropdown
+      %a{ :class => 'glyphicon glyphicon-edit icon', :title => 'Actions', :id => 'actionsMenu', 'data-toggle' => 'dropdown' }
+      = render 'templates/task_list_actions_menu'
+    .done
+      %a{ :class => 'glyphicon glyphicon-ok icon', :title => 'Mark task as done', 'ng-click' => 'compleateTask(task)' }
+  .clearfix
+
+%h4{ 'ng-if' => 'task.description == "later"', :class => 'listHeader' } later
