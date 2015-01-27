@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140125182959) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "task_lists", force: true do |t|
+  create_table "task_lists", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140125182959) do
   add_index "task_lists", ["todo_tasks_count"], name: "index_task_lists_on_todo_tasks_count", using: :btree
   add_index "task_lists", ["user_id"], name: "index_task_lists_on_user_id", using: :btree
 
-  create_table "tasks", force: true do |t|
+  create_table "tasks", force: :cascade do |t|
     t.string   "description",                  null: false
     t.boolean  "done",         default: false, null: false
     t.integer  "task_list_id",                 null: false
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20140125182959) do
     t.integer  "position"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

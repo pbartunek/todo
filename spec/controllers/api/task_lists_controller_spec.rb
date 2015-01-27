@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Api::TaskListsController do
+describe Api::TaskListsController, type: :controller do
 
   context "User with two task lists" do
     let(:user) { create(:user) }

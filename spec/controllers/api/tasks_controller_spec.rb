@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Api::TasksController do
+describe Api::TasksController, type: :controller do
 
   context "logged in user" do
     let(:user) { create(:user) }
@@ -115,7 +115,7 @@ describe Api::TasksController do
         update_task
 
         resp = JSON.parse(response.body)
-        resp['description'].should == 'new task description'
+        resp['description'].expect == 'new task description'
         resp['done'].should == true
       end
 
