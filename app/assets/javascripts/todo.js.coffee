@@ -10,7 +10,6 @@ ToDo.config ($routeProvider, $locationProvider) ->
   $routeProvider.when '/dashboard', templateUrl: '/templates/dashboard.html', controller: 'DashboardController'
   $routeProvider.when '/l/:list_id', templateUrl: '/templates/task_list.html', controller: 'ListController'
 
-# Makes AngularJS work with turbolinks.
 $(document).on 'page:load', ->
   $('[ng-app]').each ->
     module = $(this).attr('ng-app')

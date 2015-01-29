@@ -1,9 +1,6 @@
 angular.module('ToDo').controller "DashboardController", ($scope, $routeParams, $location, TaskList) ->
 
-  console.log("dashboard ctrl")
-
   $scope.init = ->
-    console.log("dashboard ctrl init")
     @listService = new TaskList(serverErrorHandler)
     $scope.lists = @listService.all()
 
