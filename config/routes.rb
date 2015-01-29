@@ -11,6 +11,10 @@ Todo::Application.routes.draw do
     end
   end
 
+  authenticated do
+    root :to =>"templates#index", as: :authenticated
+  end
+
   root 'main#index'
 
   get '/dashboard' => 'templates#index'
