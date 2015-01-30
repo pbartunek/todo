@@ -52,6 +52,5 @@ angular.module('ToDo').controller "ListController", ($scope, $timeout, $routePar
 
       $scope.positionChanged(task)
 
-
   serverErrorHandler = ->
     alert("There was a server error, please reload the page and try again.")
